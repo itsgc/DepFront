@@ -16,7 +16,7 @@ goto CON_MENUCHK
 
 :CON_NATCHK
 IF EXIST %~dp0\AIKConsole_native.cmd (
-goto NATIVELAUNCH ) else goto CON_NATERROR
+goto NATIVELAUNCH ) else goto NATIVEERROR
 
 :CON_NATERROR
 echo.
@@ -26,7 +26,7 @@ goto END
 
 :CON_MENUCHK
 IF EXIST %~dp0\AIKConsole_menu.cmd (
-goto MENULAUNCH ) else goto CON_MENUERROR
+goto MENULAUNCH ) else goto MENUERROR
 
 :CON_MENUERROR
 echo.

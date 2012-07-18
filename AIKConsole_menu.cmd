@@ -1,7 +1,8 @@
 @echo off
 cls
-goto menu
-:menu
+goto MENU
+
+:MENU
 echo.
 echo What would you like to do?
 echo.
@@ -15,22 +16,34 @@ echo 3 Quit
 echo.
 
 
-:choice
+:CHOICE
 set /P C=[1,2,3]?
-if "%C%"=="3" goto quit
-if "%C%"=="2" goto 32o64
-if "%C%"=="1" goto native
-goto choice
+if "%C%"=="3" goto QUIT
+REM Aggiungiamo un ciclo di controllo qui dato che 32o64 è l'ultimo file della console che non è stato validato.
+if "%C%"=="2" goto 32O64CHK
+if "%C%"=="1" goto NATIVE
+goto CHOICE
 
-:native
+:NATIVE
 call %~dp0\AIKConsole_native.cmd
-goto quit
+goto QUIT	
 
-:32o64
+:32O64CHK
+IF EXIST %~dp0\AIKConsole_32o64.cmd (
+goto 32O64
+) else goto 32O64ERROR
+
+:32O64ERROR
+echo.
+echo AIKConsole_32o64.cmd could not be found, do you have a working Deployment Frontend distribution?
+echo.
+goto END
+
+:32O64
 call %~dp0\AIKConsole_32o64.cmd
-goto quit
+goto QUIT
 
-:quit
+:QUIT
 exit
 
 :end
