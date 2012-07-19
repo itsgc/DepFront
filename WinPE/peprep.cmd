@@ -50,7 +50,7 @@ goto REMOUNT
 cls
 echo.
 echo WinPE_%arch% will be now mounted. Run %~dp0\SupportFiles\dismount_%arch%.cmd to commit your changes to the wim file. PLEASE NOTE: if you'd like to revert your changes, please run abortmount_%arch%.cmd in the same directory
-call %~dp0\SupportFiles\mount_%arch%.cmd
+call %~dp0\SupportFiles\pemount_%arch%.cmd
 goto END
 
 :END

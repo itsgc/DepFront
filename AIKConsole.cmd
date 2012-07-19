@@ -39,6 +39,7 @@ call %~dp0\AIKConsole_native.cmd
 goto END
 
 :MENULAUNCH
+REM Il menu verrà lanciato solo se viene rilevata una architettura amd64. Lo scopo e' permettere la selezione dell'ambiente dato che i sistemi a 64 bit possono creare dischi di boot e di installazione per entrambe le architetture.
 call %~dp0\AIKConsole_menu.cmd
 goto END
 

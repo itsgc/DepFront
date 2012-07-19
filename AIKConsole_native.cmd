@@ -10,7 +10,6 @@ echo cmd.exe could not be found, is this a valid Windows 7 Installation?
 REM Chiama cmd.exe e imposta le variabili d'ambiente necessarie per l'utilizzo dei componenti di AIK. NOTA: USMT e VAMT non sono presenti nelle variabili d'ambiente e vanno chiamati separatametne.
 %comspec% /K "%~dp0\Scripts\env.cmd"
 goto END
-
 )
 
 :END
